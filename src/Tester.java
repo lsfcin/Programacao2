@@ -34,8 +34,32 @@ public class Tester {
 		return bestPost;
 	}
 	
-	public static void main(String[] args) {
-		ArrayList<Profile> profiles = new ArrayList<Profile>();	
+	public static void main(String[] args) {		
+
+		Cachorro cachorro1 = new Cachorro();
+		Cachorro cachorro2 = new Cachorro();
+		Cachorro cachorro3 = new Cachorro();
+		
+		Gato gato1 = new Gato();
+		Gato gato2 = new Gato();
+		Gato gato3 = new Gato();
+
+		
+		ArrayList<Animal> list = new ArrayList<Animal>();
+		list.add(cachorro1);
+		list.add(gato1);
+		list.add(cachorro2);
+		list.add(gato2);
+		list.add(cachorro3);
+		list.add(gato3);
+		
+		for(var obj : list)
+		{
+			obj.andar();
+		}
+	}
+}
+		/*ArrayList<Profile> profiles = new ArrayList<Profile>();
 		
 		// Criação dos perfis
 		profiles.add(new Profile("Lucas Silva Figueiredo", "lsfcin",
@@ -59,11 +83,19 @@ public class Tester {
 		profiles.add(new Profile("Rafa Moreira","ganggang777",
 				"Este é o perfil de Rafa Moreira."));
 		
+		profiles.add(new CreatorProfile("Thaís Dutra", "thaisdutrasa", 
+										"moda, cores e bem estar",
+										"D:\\Downloads\\images\\Thais.jpg",
+				   						"Digital Creator"));
+		
 		// Seguidores e seguidos
 		var lucas = profiles.get(0);
 		var messi = profiles.get(1);
 		var fausto = profiles.get(2);
 		var ednaldo = profiles.get(3);
+		var thais = profiles.get(5);
+		
+		thais.show();
 		
 		messi.follow(ednaldo); // Messi segue Ednaldo Pereira
 		lucas.follow(messi); // Lucas segue Messi
@@ -86,17 +118,11 @@ public class Tester {
 		fausto.likeOrDeslikePost(messi, 0);
 		ednaldo.likeOrDeslikePost(messi, 0);
 		
-		Post bestPost = findBestPost(profiles);
-		bestPost.show();
-		
-		// Impressão no console
-		/*for(Profile profile : profiles)	
-		{
-			profile.show();
-		}*/
+		//Post bestPost = findBestPost(profiles);
+		//bestPost.show();
 	}
-}
-		
+}*/
+	
 		
 		
 		

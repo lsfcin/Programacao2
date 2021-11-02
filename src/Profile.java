@@ -2,15 +2,13 @@ import java.awt.EventQueue;
 import java.util.ArrayList;
 
 public class Profile {
-	private String name;
-	private String id;
-	private String bio;
-	private Image photo;
-	private ArrayList<Profile> following;
-	private ArrayList<Profile> followedBy;
-	private ArrayList<Post> posts;
-	
-	// Imagens, marcações para cada imagem e texto
+	protected String name;
+	protected String id;
+	protected String bio;
+	protected Image photo;
+	protected ArrayList<Profile> following;
+	protected ArrayList<Profile> followedBy;
+	protected ArrayList<Post> posts;
 	
 	public Profile(String name, String id, String bio, String imagePath) {
 		this.name = name;
@@ -31,6 +29,31 @@ public class Profile {
 		System.out.println("@" + this.id);
 		System.out.println("Bio: " + this.bio);
 		
+		showConnectionNetwork();		
+		showPhoto();		
+		showPosts();
+		
+		System.out.println("\n---\n");
+	}
+
+	protected void showPosts() {
+		if(getPosts().size() > 0)
+		{
+			System.out.println("" + getPosts().size() + " posts:");
+			for(Post post : getPosts())
+			{
+				post.show();
+			}
+		}
+	}
+
+	protected void showPhoto() {
+		if(photo != null) {
+			photo.display();			
+		}
+	}
+
+	protected void showConnectionNetwork() {
 		if(following.size() > 0)
 		{
 			System.out.println("\nSeguindo: ");
@@ -46,21 +69,6 @@ public class Profile {
 				System.out.println("." + follower.name);
 			}
 		}
-		
-		if(photo != null) {
-			photo.display();			
-		}
-		
-		if(getPosts().size() > 0)
-		{
-			System.out.println("" + getPosts().size() + " posts:");
-			for(Post post : getPosts())
-			{
-				post.show();
-			}
-		}
-		
-		System.out.println("\n---\n");
 	}
 	
 	public void follow(Profile user) {
