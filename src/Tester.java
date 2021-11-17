@@ -43,7 +43,6 @@ public class Tester {
 		Gato gato1 = new Gato();
 		Gato gato2 = new Gato();
 		Gato gato3 = new Gato();
-
 		
 		ArrayList<Animal> list = new ArrayList<Animal>();
 		list.add(cachorro1);
